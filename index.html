@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <style>
+      #adfinixAdLogo {
+        background: #ededed;
+        opacity: 0.8;
+        transition: 0.2s;
+        position: absolute;
+        bottom: 0;
+        display: inline-flex;
+        right: 0;
+        text-decoration: none;
+        padding: 3px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+        align-items: center;
+      }
+
+      #adfinixAdLogo img {
+        width: 15px;
+        height: 15px;
+      }
+
+      #adfinixAdLogo span {
+        width: 0px;
+        transition: 0.2s;
+        margin-left: 2px;
+        display: inline-block;
+        font-size: 10px;
+        visibility: hidden;
+      }
+
+      #adfinixAdLogo:hover {
+        opacity: 1;
+      }
+
+      #adfinixAdLogo:hover span {
+        width: 35px;
+        visibility: visible;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="clock_assets/flipclock.css" />
+  </head>
+
+  <body style="margin: 0; padding: 0">
+    <div style="position: relative; overflow: hidden; display: inline-block">
+      <a href="http://ms.purplepatch.online/adgallery" target="_blank"
+        ><img
+          style="display: block; height: auto; max-width: 300px; width: 100%"
+          src="assets/image.png"
+        />
+        <div
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          "
+          }
+          class="wrapper"
+        >
+          <div
+            class="clock-builder-output"
+            style="font-family: 'Bebas Neue', cursive; display: flex"
+          ></div>
+          <script
+            type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
+          ></script>
+          <script
+            type="text/javascript"
+            src="clock_assets/flipclock.js"
+          ></script>
+          <style text="text/css">
+            body .flip-clock-wrapper ul li a div div.inn,
+            body .flip-clock-small-wrapper ul li a div div.inn {
+              color: #cccccc;
+              background-color: #333333;
+            }
+
+            body .flip-clock-dot,
+            body .flip-clock-small-wrapper .flip-clock-dot {
+              background: #ff00ff;
+            }
+
+            body .flip-clock-wrapper .flip-clock-meridium a,
+            body .flip-clock-small-wrapper .flip-clock-meridium a {
+              color: #323434;
+            }
+          </style>
+          <script type="text/javascript">
+            $(function () {
+              FlipClock.Lang.Custom = {
+                days: "",
+                hours: " ",
+                minutes: " ",
+                seconds: " ",
+              };
+              var opts = {
+                clockFace: "HourCounter",
+                countdown: true,
+                language: "Custom",
+              };
+              opts.classes = {
+                active: "flip-clock-active",
+                before: "flip-clock-before",
+                divider: "flip-clock-divider",
+                dot: "flip-clock-dot",
+                label: "flip-clock-label",
+                flip: "flip",
+                play: "play",
+                wrapper: "flip-clock-small-wrapper",
+              };
+              var countdown = 1627768000 - new Date().getTime() / 1000; // from: 07/31/2021 12:00 am +0600
+              countdown = Math.max(1, countdown);
+              $(".clock-builder-output").FlipClock(countdown, opts);
+            });
+          </script>
+        </div>
+      </a>
+    </div>
+  </body>
+</html>
